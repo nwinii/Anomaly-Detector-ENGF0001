@@ -65,6 +65,27 @@ typedef struct telemetryData
   String lastFault;
 } TelemetryData;
 
+/*
+
+{ Example of a stream of data: this is received every second
+  
+  "window": {"start": 1794842302, "end": 1794842303, "seconds": 1, "samples": 11},
+
+  "temperature_C": {"mean": 29.99066868713572, "min": 29.90080577642732, "max": 30.061760883079785},
+  "pH": {"mean": 5.053657183474631, "min": 5.009077017190612, "max": 5.090807322044645},
+  "rpm": {"mean": 1006.9582298071705, "min": 991.8682629737552, "max": 1035.0202472168608},
+
+  "actuators_avg": {"heater_pwm": 0.46461709147324637, "motor_pwm": 0.8515963796167899, "acid_pwm": 0.0007687214996582638, "base_pwm": 0.0},
+
+  "dosing_l": {"acid": 6.229042007818907e-05, "base": 3.323338554984632e-05},
+  "heater_energy_Wh": 0.018445933041116646, "photoevents": 37,
+  "setpoints": {"temperature_C": 30.0, "pH": 5.0, "rpm": 1000.0},
+  
+  "faults": {"last_active": [], "counts": {}}
+}
+
+*/
+
 TelemetryData telemetryData;
 volatile bool newDataReady = false;
 
